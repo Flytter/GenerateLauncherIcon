@@ -1,12 +1,11 @@
-class getIntens:
+import glob
+
+class getItens:
 
     def __init__(self):
-        path ='entrance/'
-        fileList = []
+        self.fileList = []
     
-    def getFile(self):
-        try:
-            self.fileList = [f for f in glob.glob(self.path+'*.png')]
-            return True
-        except:
-            return False
+    def getFile(self, path):
+        self.fileList = [f for f in glob.glob(path+'/entrance/'+'*.png')]
+        return self.fileList
+        
