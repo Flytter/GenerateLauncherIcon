@@ -1,12 +1,15 @@
 from lib.getItensFromEntrance import *
-import opencv
+import os
 
 
-class controller:
+class controllerImg:
     
-    def __init__(self):
-        image = ''
+    def __init__(self, path):
+        self.itens = getItens()
+        self.listItens = getItens().getFile(path)
 
-    def resizeImage(self, path):
+    def resizeImage(self):
+        for i in self.listItens:
+            print(i)
 
 
