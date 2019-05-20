@@ -1,11 +1,12 @@
 class getIntens:
 
     def __init__(self):
-        fileDirectory=''
+        path ='entrance/'
+        fileList = []
     
-    def getFile(self, name):
+    def getFile(self):
         try:
-            self.fileDirectory = './entrance/'+name
+            self.fileList = [f for f in glob.glob(self.path+'*.png')]
             return True
         except:
             return False
