@@ -11,6 +11,7 @@ class controllerImg:
         self.listItens = getItens().getFile(path)
         self.img = cv2.imread(self.listItens[0])
         self.androidFolder = self.path+'/output/'+self.nameFolder[1]+'/android'
+        self.iosFolder = self.path+'/output/'+self.nameFolder[1]+'/IOS'
 
     def resizeImage(self):
 
@@ -22,6 +23,7 @@ class controllerImg:
             self.saveAndroid(144, 144, self.androidFolder, 'mipmap-xxhdpi')
             self.saveAndroid(192, 192, self.androidFolder, 'mipmap-xxxhdpi')
             self.saveAndroid(512, 512, self.androidFolder, 'GooglePlay')
+            self.saveIOS(20, 20, self.iosFolder, 'Icons', 'Icon-App-20x20@1x.png')
     
 
     def createFolder(self, path, countName):
@@ -47,4 +49,9 @@ class controllerImg:
         image = cv2.resize(self.img,(width,height), interpolation = cv2.INTER_CUBIC)
         print(local+'/'+filename+'/'+'ic_launcher.png')
         cv2.imwrite(local+'/'+filename+'/'+'ic_launcher.png', image)
+    
+    def saveIOS(self, width, height, local, filename, file):
+        image = cv2.resize(self.img,(width,height), interpolation = cv2.INTER_CUBIC)
+        cv2.imwrite(local+'/'+filename+'/'+file, image)
+
 
