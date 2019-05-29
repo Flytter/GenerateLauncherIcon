@@ -9,7 +9,7 @@ class controllerImg:
         self.path = path
         self.nameFolder = arguments
         self.listItens = getItens().getFile(path)
-        self.img = cv2.imread(self.listItens[0])
+        self.img = cv2.imread(self.listItens[0], cv2.IMREAD_UNCHANGED)
         self.androidFolder = self.path+'/output/'+self.nameFolder[1]+'/android'
         self.iosFolder = self.path+'/output/'+self.nameFolder[1]+'/IOS'
 
