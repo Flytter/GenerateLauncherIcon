@@ -2,7 +2,7 @@ cycler==0.10.0
 glob3==0.0.1
 kiwisolver==1.1.0
 matplotlib==3.1.0
-numpy==1.16.3
+numpy==1.22.0
 opencv-python==4.1.0.25
 pkg-resources==0.0.0
 pyparsing==2.4.0
